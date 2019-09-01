@@ -62,3 +62,18 @@ strv_split2 = function(string_vector, split_by_1, split_by_2, position_1=NULL, p
   return(out)
 
 }
+
+#' remove any stray quotes in strings
+#' @param string string
+#' @return string without quotes
+#' @export
+#' @author Beth Signal
+#' @examples
+#' remove_quotes("abcd'efgh")
+#' remove_quotes('abcd"efgh')
+remove_quotes = function(string){
+
+  out = gsub('"','',gsub("'", "", string))
+  return(out)
+
+}
